@@ -8,6 +8,8 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -39,12 +41,13 @@ public class Girl {
 	/**
 	 * 金额
 	 */
-	//@NotNull(message = "金额必传")
+	@NotNull(message = "金额必传")
 	private Integer money;
 
 	/**
 	 * 年龄
 	 */
+	@Min(value = 18,message = "未满18岁不得进入")
 	private Integer age;
 
 

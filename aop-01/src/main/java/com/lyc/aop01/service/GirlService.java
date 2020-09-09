@@ -29,4 +29,8 @@ public interface GirlService {
 	 */
 	int delectGirl(Integer id);
 
+	int updateGirl(Integer id,Girl girl);
+
+	void saveTwoGirls();
+
 }
