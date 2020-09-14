@@ -8,16 +8,15 @@ import com.lyc.aop01.service.GirlService;
 import com.lyc.aop01.utils.ResultResponse;
 import com.lyc.aop01.utils.ResultUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 /**
  * @author LYC
@@ -48,8 +47,8 @@ public class GirlController {
 	public Girl getAllGirl(@PathVariable Integer id){
 		//Girl girl = girlRepository.getOne(id);
 		Girl girl = girlRepository.findById(id).orElse(null);
-		if(Objects.isNull(girl)){
-			throw new ResponseException(ResultResponse.NOT_FOUNT);
+			if(Objects.isNull(girl)){
+				throw new ResponseException(ResultResponse.NOT_FOUNT);
 		}
 		return girl;
 	}

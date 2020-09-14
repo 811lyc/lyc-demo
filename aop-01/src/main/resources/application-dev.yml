@@ -3,6 +3,7 @@ server:
 girl:
   cupSize: B
   age: 18
+  money: 16
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
